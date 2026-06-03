@@ -1,4 +1,4 @@
-COMPOSE=docker-compose -f srcs/docker-compose.yml
+COMPOSE=docker compose -f srcs/docker-compose.yml
 BUILD=$(COMPOSE) build --parallel --no-cache
 UP=$(COMPOSE) up -d
 DOWN=$(COMPOSE) down
@@ -9,7 +9,7 @@ all: create build up
 
 .PHONY: create
 create:
-	mkdir -p /home/marykman/data/mariadb
+	mkdir -p /home/marykman/data/mysql
 	mkdir -p /home/marykman/data/wordpress
 
 .PHONY: build
